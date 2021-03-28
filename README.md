@@ -110,12 +110,26 @@ Serão descritas abaixo algumas estórias já discutidas com a Swift Consulting,
       Então a lista de tickets é exibida
       E a contagem de tickets é exibida
       
+        Endpoints para API:
+          /tickets;
+            Recebe:
+              Cliente;
+            Retorna:
+              Tickets; Cliente;            
+      
       Cenário #1.2: Cliente inválido
       Dado que o Gestor consulta Lista de Tickets
       E insere um Cliente inválido
       Quando clicar em Consultar
       Ou apertar"Enter
       Então a mensagem informando "Cliente inválido" deverá ser exibida
+      
+        Endpoints para API:
+          /tickets;
+            Recebe:
+              Cliente;
+            Retorna:
+              Tickets; Cliente;
       
       Cenário #1.3: Tickets no período
       Dado que o Gestor consulta o Lista de Tickets
@@ -126,6 +140,15 @@ Serão descritas abaixo algumas estórias já discutidas com a Swift Consulting,
       Ou apertar Enter
       Então uma tabela onde cada linha conterá os tickets do Cliente, cuja Data de Abertura seja maior que Data Início e menor que Data Fim será exibida
       E uma contagem de número de tickets será exibida
+      
+        Endpoints para API:
+          /tickets;
+            Recebe:
+              Cliente;
+              Data Início;
+              Data Fim;
+            Retorna:
+              Tickets; Cliente;
   
   Story #2: Franquias;
     "Como um Gestor, quero consultar o consumo da franquia de um contrato, para entender o comportamento de um cliente"
@@ -143,6 +166,22 @@ Serão descritas abaixo algumas estórias já discutidas com a Swift Consulting,
       E uma soma do Consumo de Horas será exibida
       E um gráfico em Barras e Linhas dos Contratos será exibido
       
+        Endpoints para API:
+           /contratos;
+            Recebe:
+              Ano;
+              Mes;
+            Retorna:
+              Contratos; Cliente; Franquia;
+              
+           /apontamentos;
+            Recebe:
+              Ano;
+              Mes;
+            Retorna:
+              Apontamentos; Cliente; Analista;
+              
+      
       Cenário #2.2: Exibir Gráfico de Barras e Linhas dos Contratos
       Dado que o Gestor solicita o gráfico Barras e Linhas dos Contratos
       E insere o Cliente
@@ -159,7 +198,22 @@ Serão descritas abaixo algumas estórias já discutidas com a Swift Consulting,
         Os valores de linha do gráfico informam a porcentagem de consumo, comparando a Soma das Horas Apontadas dividido pela Franquia de Horas do Contrato
         O eixo Y tem o valor máximo sendo o maior valor de Franquia do período
         Os valores de barra do gráfico terão a cor variando do Vermelho-Escuro para o Verde-Claro, de acordo com o maior valor de Apontamento de Horas
-        Os valores de linha terão a cor variando do Roxo-Escuro para o Amarelo-Claro, de acordo com o maior valor de porcentagem de Consumo de Franquias 
+        Os valores de linha terão a cor variando do Roxo-Escuro para o Amarelo-Claro, de acordo com o maior valor de porcentagem de Consumo de Franquias
+        
+          Endpoints para API:
+            /contratos;
+              Recebe:
+                Ano;
+                Mes;
+              Retorna:
+                Contratos; Cliente; Franquia;
+                
+             /apontamentos;
+              Recebe:
+                Ano;
+                Mes;
+              Retorna:
+                Apontamentos; Analista; Cliente;
   
   
   Story #3: Aproveitamento de Horas;
@@ -172,5 +226,20 @@ Serão descritas abaixo algumas estórias já discutidas com a Swift Consulting,
         Quando clicar em Consultar
         Ou apertar Enter
         Então uma tabela com a lista de Analistas, contendo a coluna de Horas Contratadas neste Ano/Mes, a coluna de soma Horas Apontadas neste Ano/Mes, e o valor de aproveitamento dado por Horas Apontadas / Horas Contratadas será exibido, em porcentagem.
-
+        
+          Endpoints para API:
+            /apontamentos;
+              Recebe:
+                Ano;
+                Mes;
+              Retorna:
+                Apontamentos; Analista;
+                
+            /analistas;
+              Recebe:
+                Ano;
+                Mes;
+              Retorna:
+                Analista; Horas Contratadas;
+                
 # Fim
