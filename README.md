@@ -88,16 +88,38 @@ O Produto "Dashboard de Desempenho do Time de Suporte Técnico" para Empresa Swi
 
 Serão descritas abaixo algumas estórias já discutidas com a Swift Consulting, que serão objeto de trabalho nas próximas Sprints:
 
-Story #1: 
-  "Como um Gestor, quero consultar a lista de tickets, para entender a quantidade de solicitações feitas pelos clientes"
+  Story #1: Lista de Tickets;
+    "Como um Gestor, quero consultar a lista de tickets de um cliente, para entender a quantidade de solicitações feitas pelos clientes"
+    
+      Cenário #1: Cliente válido
+      Dado que o Gestor consulta o cliente
+      E insere um Cliente válido
+      Quando clicar em "Consultar"
+      Ou apertar "Enter"
+      Então a lista de tickets é retornada
+      
+      Cenário #2: Cliente inválido
+      Dado que o Gestor consulta o cliente
+      E insere um Cliente inválido
+      Quando clicar em "Consultar"
+      Ou apertar "Enter"
+      Então a mensagem informando "Cliente inválido" deverá ser exibida
+      
+      Cenário #3: Tickets no período
+      Dado que o Gestor consulta o cliente
+      E insere um Cliente válido
+      E insere uma Data Início
+      E insere uma Data Fim
+      Então uma tabela onde cada linha conterá os tickets do Cliente, cuja "Data de Abertura" seja maior que "Data Início" e menor que "Data Fim" será exibida
+      E as colunas irão exibir as informações de cada Coluna da "Tabela de Tickets"
+      E uma contagem de número de tickets será exibida
+  
+  Story #2: Franquias;
+    "Como um Gestor, quero consultar o consumo da franquia de um contrato, para entender o comportamento de um cliente"
   
   
-Story #2:
-  "Como um Gestor, quero consultar o consumo da franquia de um contrato, para entender o comportamento de um cliente"
-  
-  
-Story #3:
-  "Como um Gestor, quero consultar o índice de aproveitamento de horas contratadas com os analistas, para entender o desempenho de cada analista"
+  Story #3: Aproveitamento de Horas;
+    "Como um Gestor, quero consultar o índice de aproveitamento de horas contratadas com os analistas, para entender o desempenho de cada analista"
   
   
   
