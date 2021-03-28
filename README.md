@@ -82,7 +82,18 @@ O Produto "Dashboard de Desempenho do Time de Suporte Técnico" para Empresa Swi
         Tipo: Hora, hh:mm;
         
         "Hora Final",
-        Tipo: Hora, hh:mm;  
+        Tipo: Hora, hh:mm;
+        
+        #4 Contratos de Analistas, contendo:
+       
+        "Analista",
+        Tipo: Texto, até 32 caracteres;
+        
+        "Data do Contrato",
+        Tipo: Data, aaaa-mm;
+        
+        "Horas Contratadas",
+        Tipo: Numero inteiro        
 
 # Estórias de Usuário
 
@@ -91,38 +102,75 @@ Serão descritas abaixo algumas estórias já discutidas com a Swift Consulting,
   Story #1: Lista de Tickets;
     "Como um Gestor, quero consultar a lista de tickets de um cliente, para entender a quantidade de solicitações feitas pelos clientes"
     
-      Cenário #1: Cliente válido
-      Dado que o Gestor consulta o cliente
+      Cenário #1.1: Cliente válido
+      Dado que o Gestor consulta a Lista de Tickets
       E insere um Cliente válido
-      Quando clicar em "Consultar"
+      Quando clicar em Consultar
       Ou apertar "Enter"
-      Então a lista de tickets é retornada
+      Então a lista de tickets é exibida
+      E a contagem de tickets é exibida
       
-      Cenário #2: Cliente inválido
-      Dado que o Gestor consulta o cliente
+      Cenário #1.2: Cliente inválido
+      Dado que o Gestor consulta Lista de Tickets
       E insere um Cliente inválido
-      Quando clicar em "Consultar"
-      Ou apertar "Enter"
+      Quando clicar em Consultar
+      Ou apertar"Enter
       Então a mensagem informando "Cliente inválido" deverá ser exibida
       
-      Cenário #3: Tickets no período
-      Dado que o Gestor consulta o cliente
+      Cenário #1.3: Tickets no período
+      Dado que o Gestor consulta o Lista de Tickets
       E insere um Cliente válido
       E insere uma Data Início
       E insere uma Data Fim
-      Então uma tabela onde cada linha conterá os tickets do Cliente, cuja "Data de Abertura" seja maior que "Data Início" e menor que "Data Fim" será exibida
-      E as colunas irão exibir as informações de cada Coluna da "Tabela de Tickets"
+      Quando clicar em Consultar
+      Ou apertar Enter
+      Então uma tabela onde cada linha conterá os tickets do Cliente, cuja Data de Abertura seja maior que Data Início e menor que Data Fim será exibida
       E uma contagem de número de tickets será exibida
   
   Story #2: Franquias;
     "Como um Gestor, quero consultar o consumo da franquia de um contrato, para entender o comportamento de um cliente"
+    
+      Cenário #2.1: Consultar Franquias do Período
+      Dado que o Gestor consulta a Lista de Contratos
+      E insere o Ano
+      Ou insere o Ano
+      E insere o Mês
+      Quando clicar em Consultar
+      Ou apertar Enter
+      Então uma tabela contendo os contratos vigentes com data maior que "Ano" ou maior que "Ano+Mês" será exibida
+      E uma soma do valor de todos os contratos será exibida
+      E uma soma da Franquia de Horas será exibida
+      E uma soma do Consumo de Horas será exibida
+      E um gráfico em Barras e Linhas dos Contratos será exibido
+      
+      Cenário #2.2: Exibir Gráfico de Barras e Linhas dos Contratos
+      Dado que o Gestor solicita o gráfico Barras e Linhas dos Contratos
+      E insere o Cliente
+      E insere o Ano
+      Ou insere o Ano
+      E insere o Mês
+      Quando o gráfico for enviado
+      Então exibirá um Gráfico de Barras e Linhas será exibido
+      
+        Critérios:
+        O eixo X do gráfico informa os Clientes
+        O eixo Y do gráfico informa a Franquia de Horas do Contrato
+        Os valores de barra do gráfico informam a soma dos Apontamentos de Horas para cada cliente
+        Os valores de linha do gráfico informam a porcentagem de consumo, comparando a Soma das Horas Apontadas dividido pela Franquia de Horas do Contrato
+        O eixo Y tem o valor máximo sendo o maior valor de Franquia do período
+        Os valores de barra do gráfico terão a cor variando do Vermelho-Escuro para o Verde-Claro, de acordo com o maior valor de Apontamento de Horas
+        Os valores de linha terão a cor variando do Roxo-Escuro para o Amarelo-Claro, de acordo com o maior valor de porcentagem de Consumo de Franquias 
   
   
   Story #3: Aproveitamento de Horas;
     "Como um Gestor, quero consultar o índice de aproveitamento de horas contratadas com os analistas, para entender o desempenho de cada analista"
-  
-  
-  
-  
-  
-  
+        
+        Cenário #3.1: Exibir Aproveitamento de Horas dos Analistas
+        Dado que o Gestor consulta o Aproveitamento de Horas dos Analistas
+        E insere o Ano
+        E insere o Mês
+        Quando clicar em Consultar
+        Ou apertar Enter
+        Então uma tabela com a lista de Analistas, contendo a coluna de Horas Contratadas neste Ano/Mes, a coluna de soma Horas Apontadas neste Ano/Mes, e o valor de aproveitamento dado por Horas Apontadas / Horas Contratadas será exibido, em porcentagem.
+
+# Fim
