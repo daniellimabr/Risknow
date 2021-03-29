@@ -14,5 +14,3 @@ A Swift Consulting presta serviço de suporte técnico a grandes provedores e op
 # Iniciativa
 
 O Produto "Dashboard de Desempenho do Time de Suporte Técnico" para Empresa Swift Consulting, terá como objetivo auxiliar a empresa a entender melhor o cenário das suas atividades, e atendimento aos contratos estabelecidos com seus clientes. Com isto, a Swift Consulting pretende definir a melhor utilização de seus recursos, e melhorar sua estratégia de precificação de serviços.
-
-# Fim
