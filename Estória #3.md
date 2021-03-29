@@ -1,4 +1,5 @@
-Story #3: Aproveitamento de Horas;
+# Story #3: Aproveitamento de Horas;
+  
   "Como um Gestor, quero consultar o índice de aproveitamento de horas contratadas com os analistas, para entender o desempenho de cada analista"
 
       Cenário #3.1: Exibir Aproveitamento de Horas dos Analistas
@@ -9,13 +10,15 @@ Story #3: Aproveitamento de Horas;
       Ou apertar Enter
       Então uma tabela com a lista de Analistas, contendo a coluna de Horas Contratadas neste Ano/Mes, a coluna de soma Horas Apontadas neste Ano/Mes, e o valor de aproveitamento dado por Horas Apontadas / Horas Contratadas será exibido, em porcentagem.
 
-        Endpoints para API:
+  Endpoints para API:
+  
           /apontamentos;
             Recebe:
               Ano;
               Mes;
             Retorna:
               Apontamentos; Analista;
+;
 
           /analistas;
             Recebe:
