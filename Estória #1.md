@@ -41,5 +41,3 @@ Endpoints para API:
             Data Fim;
           Retorna:
             Tickets; Cliente;
-
-# Fim
