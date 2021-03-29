@@ -1,4 +1,5 @@
-Story #2: Franquias;
+# Story #2: Franquias;
+  
   "Como um Gestor, quero consultar o consumo da franquia de um contrato, para entender o comportamento de um cliente"
 
     Cenário #2.1: Consultar Franquias do Período
@@ -14,21 +15,7 @@ Story #2: Franquias;
     E uma soma do Consumo de Horas será exibida
     E um gráfico em Barras e Linhas dos Contratos será exibido
 
-      Endpoints para API:
-         /contratos;
-          Recebe:
-            Ano;
-            Mes;
-          Retorna:
-            Contratos; Cliente; Franquia;
-
-         /apontamentos;
-          Recebe:
-            Ano;
-            Mes;
-          Retorna:
-            Apontamentos; Cliente; Analista;
-
+;
 
     Cenário #2.2: Exibir Gráfico de Barras e Linhas dos Contratos
     Dado que o Gestor solicita o gráfico Barras e Linhas dos Contratos
@@ -48,17 +35,20 @@ Story #2: Franquias;
       Os valores de barra do gráfico terão a cor variando do Vermelho-Escuro para o Verde-Claro, de acordo com o maior valor de Apontamento de Horas
       Os valores de linha terão a cor variando do Roxo-Escuro para o Amarelo-Claro, de acordo com o maior valor de porcentagem de Consumo de Franquias
 
-        Endpoints para API:
-          /contratos;
-            Recebe:
-              Ano;
-              Mes;
-            Retorna:
-              Contratos; Cliente; Franquia;
+Endpoints para API:
 
-           /apontamentos;
-            Recebe:
-              Ano;
-              Mes;
-            Retorna:
-              Apontamentos; Analista; Cliente;
+        /contratos;
+          Recebe:
+            Ano;
+            Mes;
+          Retorna:
+            Contratos; Cliente; Franquia;
+
+;
+
+         /apontamentos;
+          Recebe:
+            Ano;
+            Mes;
+          Retorna:
+            Apontamentos; Analista; Cliente;
