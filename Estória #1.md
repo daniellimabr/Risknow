@@ -1,4 +1,5 @@
-Story #1: Lista de Tickets;
+# Story #1: Lista de Tickets;
+  
   "Como um Gestor, quero consultar a lista de tickets de um cliente, para entender a quantidade de solicitações feitas pelos clientes"
 
     Cenário #1.1: Cliente válido
@@ -9,12 +10,7 @@ Story #1: Lista de Tickets;
     Então a lista de tickets é exibida
     E a contagem de tickets é exibida
 
-      Endpoints para API:
-        /tickets;
-          Recebe:
-            Cliente;
-          Retorna:
-            Tickets; Cliente;            
+;
 
     Cenário #1.2: Cliente inválido
     Dado que o Gestor consulta Lista de Tickets
@@ -23,12 +19,7 @@ Story #1: Lista de Tickets;
     Ou apertar"Enter
     Então a mensagem informando "Cliente inválido" deverá ser exibida
 
-      Endpoints para API:
-        /tickets;
-          Recebe:
-            Cliente;
-          Retorna:
-            Tickets; Cliente;
+;
 
     Cenário #1.3: Tickets no período
     Dado que o Gestor consulta o Lista de Tickets
@@ -40,7 +31,9 @@ Story #1: Lista de Tickets;
     Então uma tabela onde cada linha conterá os tickets do Cliente, cuja Data de Abertura seja maior que Data Início e menor que Data Fim será exibida
     E uma contagem de número de tickets será exibida
 
-      Endpoints para API:
+
+Endpoints para API:
+
         /tickets;
           Recebe:
             Cliente;
