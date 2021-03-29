@@ -2,7 +2,7 @@
 
   # Banco de Dados: 
   
-    #1 Lista de tickets, contendo:
+  #1 Lista de tickets, contendo:
     
       "Ticket",
         Tipo: Numero Inteiro, até 32 caracteres;
@@ -28,7 +28,7 @@
       "Solicitação",
           Tipo: Texto, até 2048 caracteres;
             
-      #2 Lista de Contratos, contendo:
+  #2 Lista de Contratos, contendo:
       
         "Cliente",
          Tipo: Texto, até 32 caracteres;
@@ -50,7 +50,7 @@
          "Fim do Contrato";
          Tipo: Data, aaaa-mm-dd;
          
-       #3 Apontamentos, contendo:
+   #3 Apontamentos, contendo:
        
         "Analista",
         Tipo: Texto, até 32 caracteres;
